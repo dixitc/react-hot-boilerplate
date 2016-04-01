@@ -1,0 +1,48 @@
+
+render ({
+	let name = this.props.product.stocked ?
+	this.props.product.name :
+	<span style={{color : 'red'}}>
+	this.props.product.name
+	</span>
+	return (
+		<div>{{name}}</div>
+	);
+})
+
+
+const todo = (state , action) => {
+	switch (action.type) {
+		case 'TOGGLE_TODO':
+
+		default:
+			return state;
+	}
+}
+
+
+
+THings
+
+create package.json
+install react
+get minimal app up and running
+install redux , react-redux , redux-devtools
+configure App with provider and connect
+install webpack
+config webpack.config.js
+install material-ui
+get some minimal app running client side (setup webpack dev server)
+install redux-hot-loader
+get it working with hot-loader
+install react-router
+configure react-router with redux
+get some minmal app running
+install redux-auth
+integrate redux-auth with redux and react-router
+get some minimal app with authentication working
+get previous app to work with cherry backend
+create directory structure
+start building static components with no interactivity
+fetch data from cherry (use redux-async-connect) with no interactivity
+add user-interactions
