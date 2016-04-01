@@ -13,6 +13,5 @@ const doSomething = (text) => {
 
 }
 
+//export action creator and call like dispatch(actionCreator(a,b))
 export default doSomething;
-
-//export action creator and call like dispatch(doSomething(text))

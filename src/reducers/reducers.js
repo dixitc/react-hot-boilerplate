@@ -7,12 +7,14 @@ let initState = {
 	}
 }
 
+let updateTitle = "cherry memories";
+
 const testReducer = (state=initState , action) => {
 	switch (action.type) {
 		case 'DO_SOMETHING':
 			console.log("action : do_something is running");
 			console.log(state);
-			return Object.assign({},state,{memory:{title:"cherry memories"}})
+			return Object.assign({},{memory:{title:"cherry memories",id : state.memory.id}})
 
 		default:
 			return state;
