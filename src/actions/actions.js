@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-fetch';
 //actions types
 const DO_SOMETHING = 'DO_SOMETHING';
 const FETCH_MEMORIES = 'FETCH_MEMORIES';

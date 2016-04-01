@@ -1,10 +1,11 @@
+import 'babel-polyfill';
 
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore , applyMiddleware } from 'redux';
 import { combineReducers } from 'redux';
-import thunk from 'redux-thunk';
+import thunkMiddleware from 'redux-thunk';
 import { Router, Route, browserHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 import App from './App';
@@ -23,18 +24,18 @@ let initState = {
 }
 
 
-const logger = createLogger();
+const loggerMiddleware = createLogger();
 
-const reducer = combineReducers({
+const rootReducer = combineReducers({
 	memory:testReducer,
 	inputvalue:inputReducer,
 	routing: routerReducer
 })
 
-let store = createStore(reducer,
+let store = createStore(rootReducer,
 	{},
 	window.devToolsExtension ? window.devToolsExtension() : undefined,
-	applyMiddleware(thunk , logger)
+	applyMiddleware(thunkMiddleware , loggerMiddleware)
 );
 
 const rootEl = document.getElementById('root');
