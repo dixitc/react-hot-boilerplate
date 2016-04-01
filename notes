@@ -1,3 +1,5 @@
+Need to normalize state shape  (use normalizer https://github.com/gaearon/normalizr)
+
 state shape {
     "memories": {
         "isFetching": false,
@@ -5,16 +7,35 @@ state shape {
         "lastUpdated": "",
         "memories": [{
             "id": 0,
-            "coverlUrl": ""
+            "coverlUrl": "",
+			owner : "",
+			members : [0,1], // list of user ids
+			"moments" : [1,2]  // list of moment ids
         }, {
             "id": 1,
-            "coverUrl": ""
+            "coverUrl": "",
+			owner : "",
+			"moments" : [3]
         }]
     },
-    "momentsByMemory": {
-        "memoryId": []
+    "moments": {     // entire moments tree
+        1: {
+		"URL" : "asdfasdf",
+		"memoryId" : "0",
+		"like" : false
+		},
+		2 : {
+		"URL" : "asdfasdf",
+		"memoryId" : "0",
+		"like" : true
+		},
+		3 : {
+		"URL" : "asdfasdf",
+		"memoryId" : "1",
+		"like" : false
+		}
     },
-    "users": [{
+    "users": [{    // all user list
         "id": 0,
         "name": "",
         "avatar": ""
@@ -23,10 +44,10 @@ state shape {
         "name": "",
         "avatar": ""
     }],
-    "authenticatedUser": {
+    "authenticatedUser": {  // authenticated or signed-in user
         "name": "",
         "avatar": "",
-        "id": ""
+        "id": 1
     }
 
 }
@@ -42,7 +63,7 @@ APIS used:
 
 {
     "purpose": "get user memories",
-    "path": "GET v1/memory.json",
+    "path": "GET /memrousel/v2/memory/allmemories.json",
     "urlParams": {
         "moments": "momentsCount",
         "page": "",

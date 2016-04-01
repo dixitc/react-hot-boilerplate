@@ -11,6 +11,7 @@ import TextField from 'material-ui/lib/text-field';
 
 
 
+
 const MessageText = (props) => {
 
 	return (
@@ -30,6 +31,7 @@ const Message = ({memory , clickHandler}) => (
 	<p style={{color : 'red'}} onClick={() => clickHandler(memory)}>  {memory.title}  </p>
 	<MessageText text={memory.title}>
 	</MessageText>
+
 	</div>
 )
 

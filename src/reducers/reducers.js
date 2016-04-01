@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+
 
 let initState =  {
 		id:1,
@@ -33,9 +33,9 @@ const inputReducer = (state="" , action) => {
 	}
 }
 
-const reducer = combineReducers({
-memory:testReducer,
-inputValue : inputReducer
-})
 
-export default reducer;
+
+
+export { testReducer };
+export { inputReducer };
+//export inputReducer;

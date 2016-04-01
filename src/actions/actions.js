@@ -23,6 +23,9 @@ const doSomething = (text) => {
 
 }
 
+
+// have to use redux-thunk to setup async actionCreators
+
 const fetchMemories = (memoryId) => {
 	return {
 		type: 'FETCH_MEMORIES',
