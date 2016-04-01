@@ -24,6 +24,7 @@ gridview (album) - react-grid-layout (https://github.com/STRML/react-grid-layout
 
 Testing :
 expect library for assertions(https://github.com/mjackson/expect)
+mocha
 
 screens :
 /login (default unauthenticated)

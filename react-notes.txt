@@ -22,7 +22,7 @@ const todo = (state , action) => {
 
 
 
-THings
+Things
 
 create package.json
 install react
@@ -31,18 +31,41 @@ install redux , react-redux , redux-devtools
 configure App with provider and connect
 install webpack
 config webpack.config.js
-install material-ui
 get some minimal app running client side (setup webpack dev server)
 install redux-hot-loader
 get it working with hot-loader
+install material-ui
 install react-router
-configure react-router with redux
-get some minmal app running
+
+done till here
+
+configure react-router with redux (use react-router-redux)
+
+
+/*import { routerMiddleware, push } from 'react-router-redux'
+
+// Apply the middleware to the store
+const middleware = routerMiddleware(browserHistory)
+const store = createStore(
+  reducers,
+  applyMiddleware(middleware)
+)
+
+// Dispatch from anywhere like normal.
+store.dispatch(push('/foo'))*/
+
+
+
+get this minmal app running with routes
 install redux-auth
 integrate redux-auth with redux and react-router
 get some minimal app with authentication working
-get previous app to work with cherry backend
-create directory structure
-start building static components with no interactivity
+get minimal app to work with cherry backend
+finalize directory structure
+start building static components
 fetch data from cherry (use redux-async-connect) with no interactivity
 add user-interactions
+
+// FUTURE THINGS TODO
+
+PROFILE APP

@@ -1,10 +1,44 @@
 import React , {PropTypes} from 'react';
 import { connect } from 'react-redux';
 import doSomething from '../actions/actions';
+import TextField from 'material-ui/lib/text-field';
+
+
+
+
+
+
+
+
+
+const MessageText = (props) => {
+
+	return (
+		<div>
+			<span> yolo {props.text} </span>
+			<div>
+				<MyInputField />
+			</div>
+		</div>
+	)
+}
+
+
 
 const Message = ({memory , clickHandler}) => (
-	<p style={{color : 'red'}} onClick={() => clickHandler()}>  {memory.title}  </p>
+	<div>
+	<p style={{color : 'red'}} onClick={() => clickHandler(memory)}>  {memory.title}  </p>
+	<MessageText text={memory.title}>
+	</MessageText>
+	</div>
 )
+
+const MyInputField = () => {
+	return (
+
+		<TextField hintText="Hint Text"/>
+	)
+}
 
 
 Message.propTypes = {
@@ -20,16 +54,16 @@ Message.propTypes = {
 
 
 const mapStateToProps = (state) => {
-	console.log(state.state.memory);
+
 	return {
-		memory: state.state.memory
+		memory: state.memory
 	}
 }
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		clickHandler: () => {
-			dispatch(doSomething("text"));
+		clickHandler: (memory) => {
+			dispatch(doSomething(memory));
 		}
 	}
 }

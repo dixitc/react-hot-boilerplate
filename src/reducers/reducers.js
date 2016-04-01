@@ -1,11 +1,9 @@
 import { combineReducers } from 'redux';
 
-let initState = {
-	memory : {
+let initState =  {
 		id:1,
-		title:"asdf sadfasd"
+		title:"click this memory"
 	}
-}
 
 let updateTitle = "cherry memories";
 
@@ -14,18 +12,30 @@ const testReducer = (state=initState , action) => {
 		case 'DO_SOMETHING':
 			console.log("action : do_something is running");
 			console.log(state);
-			return Object.assign({},{memory:{title:"cherry memories",id : state.memory.id}})
-
+			return Object.assign({},{title:"cherry memory clicked",id : action.text.id})
+		case 'HANDLE_INPUT':
+			console.log("action : handle_input is running");
+			console.log(state);
 		default:
 			return state;
 
 	}
 }
 
+const inputReducer = (state="" , action) => {
+	switch (action.type) {
+		case 'HANDLE_INPUT':
+			return action.text;
 
+		default:
+			return state
+
+	}
+}
 
 const reducer = combineReducers({
-state:testReducer
+memory:testReducer,
+inputValue : inputReducer
 })
 
 export default reducer;
